@@ -10,19 +10,15 @@ import { ProfileComponent } from './profile/profile.component';
   styleUrl: './app.css',
 })
 export class App {
-  name: string = 'Elisha';
-  data: string | number = 'Hello';
-  other: boolean = true;
+  count: number = 0;
 
-  updateName() {
-    this.data = 'Hello World';
-    this.name = 'Elisha Jameel';
-    this.other = false;
+  handleIncrement() {
+    this.count = this.count + 1;
   }
-  sum(num1: number, num2: number): number {
-    let result = num1 + num2;
-    console.log(result);
-
-    return result;
+  handleDecrement() {
+    this.count = this.count - 1;
+  }
+  handleReset() {
+    this.count = this.count = 0;
   }
 }
