@@ -12,13 +12,13 @@ import { ProfileComponent } from './profile/profile.component';
 export class App {
   count: number = 0;
 
-  handleIncrement() {
-    this.count = this.count + 1;
-  }
-  handleDecrement() {
-    this.count = this.count - 1;
-  }
-  handleReset() {
-    this.count = this.count = 0;
+  handleCounter(val: string) {
+    if (val == 'minus') {
+      this.count = this.count - 1;
+    } else if (val == 'plus') {
+      this.count = this.count + 1;
+    } else {
+      this.count = this.count = 0;
+    }
   }
 }
