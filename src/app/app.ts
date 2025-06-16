@@ -10,11 +10,19 @@ import { ProfileComponent } from './profile/profile.component';
   styleUrl: './app.css',
 })
 export class App {
-  handleClickEvent() {
-    console.log('Hello World!');
-    this.otherFunction();
+  name: string = 'Elisha';
+  data: string | number = 'Hello';
+  other: boolean = true;
+
+  updateName() {
+    this.data = 'Hello World';
+    this.name = 'Elisha Jameel';
+    this.other = false;
   }
-  otherFunction() {
-    console.log('other function');
+  sum(num1: number, num2: number): number {
+    let result = num1 + num2;
+    console.log(result);
+
+    return result;
   }
 }
