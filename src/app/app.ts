@@ -9,8 +9,4 @@ import { Login } from './login/login';
   styleUrl: './app.css',
 })
 export class App {
-  title = 'Hello Angular from Elisha Jameel';
-  name = 'Elisha Jameel';
-  x = 12;
-  y = 12;
 }
