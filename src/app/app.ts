@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Login } from './login/login';
-import { Signup } from "./signup/signup";
-import { ProfileComponent } from "./profile/profile.component";
+import { Signup } from './signup/signup';
+import { ProfileComponent } from './profile/profile.component';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +10,11 @@ import { ProfileComponent } from "./profile/profile.component";
   styleUrl: './app.css',
 })
 export class App {
+  handleClickEvent() {
+    console.log('Hello World!');
+    this.otherFunction();
+  }
+  otherFunction() {
+    console.log('other function');
+  }
 }
