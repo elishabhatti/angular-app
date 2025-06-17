@@ -1,52 +1,26 @@
-<h1>Else If | Control Flow</h1>
-<button (click)="handleColor(1)">Red</button>
-<button (click)="handleColor(2)">Blue</button>
-<button (click)="handleColor(3)">Yellow</button>
-<button (click)="handleColor(10)">Other</button>
+<h1>Switch Case in Angular</h1>
+<button (click)="handleColor('red')">Red</button>
+<button (click)="handleColor('blue')">Blue</button>
+<button (click)="handleColor('yellow')">Yellow</button>
+<button (click)="handleColor('green')">Green</button>
+<button (click)="handleColor('gold')">Gold</button>
 
-<input type="text" (input)="handleEvent($event)" placeholder="Enter Number For Color">
+<input type="text" (input)="changeColor($event)"  placeholder="Enter Color Name">
 
-@if(color == 1) {
-
-<div
-  style="
-    margin: 10px;
-    background-color: red;
-    width: 100px;
-    height: 100px;
-    border-radius: 10px;
-  "
-></div>
-}@else if(color == 2) {
-
-<div
-  style="
-    margin: 10px;
-    background-color: blue;
-    width: 100px;
-    height: 100px;
-    border-radius: 10px;
-  "
-></div>
-}@else if(color == 3) {
-
-<div
-  style="
-    margin: 10px;
-    background-color: yellow;
-    width: 100px;
-    height: 100px;
-    border-radius: 10px;
-  "
-></div>
-}@else {
-<div
-  style="
-    margin: 10px;
-    background-color: black;
-    width: 100px;
-    height: 100px;
-    border-radius: 10px;
-  "
-></div>
+@switch(color) {
+    @case('red') {
+        <h1 style="color: red;">Red Color</h1>
+    }
+    @case('green') {
+        <h1 style="color: green;">Green Color</h1>
+    }
+    @case('yellow') {
+        <h1 style="color: yellow;">Yellow Color</h1>
+    }
+    @case('blue') {
+        <h1 style="color: blue;">Blue Color</h1>
+    }
+    @default {
+        <h1 style="color: black;">No Color  Color</h1>
+    } 
 }

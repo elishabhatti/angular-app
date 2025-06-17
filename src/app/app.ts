@@ -7,11 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './app.css',
 })
 export class App {
-  color: number = 1;
-  handleColor(val: number) {
+  color: string = '';
+  handleColor(val: string) {
     this.color = val;
   }
-  handleEvent(event: Event) {
-    this.color = parseInt((event.target as HTMLInputElement).value);
+  changeColor(event:Event) {
+    this.color = (event.target as HTMLInputElement).value
   }
 }
