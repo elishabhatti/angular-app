@@ -1,23 +1,18 @@
-<h1>Events</h1>
-<button class="btn btn-2" (click)="handleEvent($event)">Click Event</button>
+<h1>Get Set Input Field Value</h1>
 <br />
-<br />
-<div
-  (mouseenter)="handleEvent($event)"
-  style="background-color: aqua; width: 100px; height: 100px"
-></div>
-<div
-  (mouseleave)="handleEvent($event)"
-  style="background-color: blue; width: 100px; height: 100px"
-></div>
-
-<br />
-<br />
-
 <input
-  (input)="handleEvent($event)"
-  (focus)="handleEvent($event)"
-  (blur)="handleEvent($event)"
   type="text"
-  name="user"
+  value="{{name}}"
+  (input)="getName($event)"
+  placeholder="Enter Your name"
 />
+<br />
+<h1>Username is: {{displayName}}</h1>
+<br />
+<button (click)="showName()">Get Value</button>
+<button (click)="setName()">Set Name</button>
+<hr />
+<h1>Email : {{email}}</h1>
+<input type="text" #emailField placeholder="Enter Email" />
+<button (click)="getEmail(emailField.value)">Get Email</button>
+<button (click)="setEmail()">Set Email</button>

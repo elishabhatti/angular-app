@@ -1,17 +1,31 @@
 import { Component } from '@angular/core';
-import { Login } from './login/login';
-import { Signup } from './signup/signup';
-import { ProfileComponent } from './profile/profile.component';
 
 @Component({
   selector: 'app-root',
-  imports: [Login, Signup, ProfileComponent],
+  imports: [],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
 export class App {
-  handleEvent(event: any) {
-    console.log('function called', event.type);
-    console.log('value', event?.target?.value);
+  name: string = '';
+  displayName: string = '';
+  email: string = '';
+  getName(event: Event) {
+    const name = (event.target as HTMLInputElement).value;
+    this.name = name;
+    console.log(name);
+  }
+  showName() {
+    this.displayName = this.name;
+  }
+  setName() {
+    this.name = 'Sam';
+  }
+  getEmail(val: string) {
+    this.email = val;
+    console.log(val);
+  }
+  setEmail() {
+    this.email = 'default@gmail.com';
   }
 }
