@@ -1,6 +1,11 @@
 <h1>If Else Condiftion</h1>
-<button (click)="hideShowDiv()">Hide Show Box</button>
+<button (click)="hideShowDiv()">{{display === true ?  "Hide Black Box"  : "Show Black Box" }}</button>
+<button (click)="toggleDiv()">{{display === true ?  "Hide Gray Box"  : "Show Gray Box" }}</button>
 
-@if(display) {
-<div class="box"></div>
-}
+<div class="container">
+  @if(display) {
+  <div class="box"></div>
+  } @if(toggle) {
+  <div class="box2"></div>
+  }
+</div>

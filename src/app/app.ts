@@ -8,8 +8,12 @@ import { Component } from '@angular/core';
 })
 export class App {
   display: boolean = true;
-  
+  toggle: boolean = true;
+
   hideShowDiv() {
     this.display = !this.display;
+  }
+  toggleDiv() {
+    this.toggle = !this.toggle;
   }
 }
