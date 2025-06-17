@@ -1,10 +1,17 @@
 import { Component } from '@angular/core';
-import { Profile } from './profile/profile';
 
 @Component({
   selector: 'app-root',
-  imports: [Profile],
+  imports: [],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
-export class App {}
+export class App {
+  display: boolean = true;
+  hideDiv() {
+    this.display = false;
+  }
+  showDiv() {
+    this.display = true;
+  }
+}
