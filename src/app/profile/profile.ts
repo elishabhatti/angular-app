@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
   imports: [],
   templateUrl: './profile.html',
   // styleUrl: './profile.css'
-  styles: ['h1{font-family: monospace ;}'],
+  styleUrls : ["./profile.css", "./profile.btn.css"]
 })
 export class Profile {}
