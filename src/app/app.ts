@@ -8,10 +8,8 @@ import { Component } from '@angular/core';
 })
 export class App {
   display: boolean = true;
-  hideDiv() {
-    this.display = false;
-  }
-  showDiv() {
-    this.display = true;
+  
+  hideShowDiv() {
+    this.display = !this.display;
   }
 }
