@@ -7,13 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './app.css',
 })
 export class App {
-  display: boolean = true;
-  toggle: boolean = true;
-
-  hideShowDiv() {
-    this.display = !this.display;
+  color: number = 1;
+  handleColor(val: number) {
+    this.color = val;
   }
-  toggleDiv() {
-    this.toggle = !this.toggle;
+  handleEvent(event: Event) {
+    this.color = parseInt((event.target as HTMLInputElement).value);
   }
 }
