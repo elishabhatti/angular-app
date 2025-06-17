@@ -1,26 +1,17 @@
-<h1>Switch Case in Angular</h1>
-<button (click)="handleColor('red')">Red</button>
-<button (click)="handleColor('blue')">Blue</button>
-<button (click)="handleColor('yellow')">Yellow</button>
-<button (click)="handleColor('green')">Green</button>
-<button (click)="handleColor('gold')">Gold</button>
+<h1>For Loop in Angular</h1>
 
-<input type="text" (input)="changeColor($event)"  placeholder="Enter Color Name">
+@for(user of users;track user) {
+<h2>{{user}}</h2>
+}
 
-@switch(color) {
-    @case('red') {
-        <h1 style="color: red;">Red Color</h1>
-    }
-    @case('green') {
-        <h1 style="color: green;">Green Color</h1>
-    }
-    @case('yellow') {
-        <h1 style="color: yellow;">Yellow Color</h1>
-    }
-    @case('blue') {
-        <h1 style="color: blue;">Blue Color</h1>
-    }
-    @default {
-        <h1 style="color: black;">No Color  Color</h1>
-    } 
+<hr />
+
+@for(student of students; track student.name; let id = $index) {
+<h2>
+  <span>{{id}}</span>
+  <span>{{student.name}}</span>
+  <span>{{student.age}}</span>
+  <span>{{student.email}}</span>
+  <button (click)="getName(student.name)">Get Name</button>
+</h2>
 }

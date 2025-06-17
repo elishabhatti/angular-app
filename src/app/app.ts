@@ -7,11 +7,15 @@ import { Component } from '@angular/core';
   styleUrl: './app.css',
 })
 export class App {
-  color: string = '';
-  handleColor(val: string) {
-    this.color = val;
-  }
-  changeColor(event:Event) {
-    this.color = (event.target as HTMLInputElement).value
+  users = ['Elisha', 'Ryan', 'Noman', 'Jawad', 'Tony', 'Sam', 'Bruce'];
+  students= [
+    {name: "Elisha", age: 18, email: "elisha@gmail.com"},
+    {name: "Ryan", age: 19, email: "ryan@gmail.com"},
+    {name: "Noman", age: 21, email: "noman@gmail.com"},
+    {name: "Jawad", age: 21, email: "jawad@gmail.com"},
+  ]
+  getName(name:string) {
+    console.log(name);
+    
   }
 }
