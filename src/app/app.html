@@ -1,8 +1,30 @@
-<h1>Effect In Angular</h1>
-<h1>{{username()}}</h1>
-<h1>{{count()}} </h1>
-<button (click)="toggleValue()">Update User</button>
-@if(displayHeading) {
+<h1>For Loop Contextual Variables In Angular</h1>
+@for(user of users; track user; let i = $index) {
 
-<h1>Page Heading</h1>
+<!-- <h4>{{$last}}</h4> -->
+<!-- <h4>{{$first}}</h4> -->
+<!-- @if($first) {
+    <h1>This is our {{i + 1}} user and name is {{user}}</h1>
+
+<h1 style="color: red">This is our {{i + 1}} user and name is {{user}}</h1>
+} -->
+
+<!-- @if($last) {
+<h1 style="color: red">This is our {{i + 1}} user and name is {{user}}</h1>
+} -->
+
+<!-- @if($odd) {
+<h1 style="color: red">This is our {{i}} user and name is {{user}}</h1>
+
+} @if($even) {
+<h1 style="color: green">This is our {{i}} user and name is {{user}}</h1>
+
+}  
+-->
+
+<!-- <h1>{{$count}}</h1> -->
+
 }
+ <!-- @empty() {
+<h1>No Record</h1>
+} -->
