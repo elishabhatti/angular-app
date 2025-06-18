@@ -1,10 +1,4 @@
-import {
-  Component,
-  computed,
-  Signal,
-  signal,
-  WritableSignal,
-} from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -13,11 +7,16 @@ import {
   styleUrl: './app.css',
 })
 export class App {
-  data: WritableSignal<number> = signal(10);
-  count: Signal<number> = computed(() => 10);
+  x = signal(10);
+  y = signal(20);
+  z = computed(() => this.x() + this.y());
 
-  updateSignal() {
-    // this.data.set('Hello');
-    this.data.update((val) => val+ 1)
+  showValue() {
+    console.log(this.z());
+    this.x.set(100);
+    console.log(this.z());
+  }
+  updateX() {
+    this.x.set(200)
   }
 }
