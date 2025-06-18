@@ -1,17 +1,6 @@
-<h1>For Loop in Angular</h1>
+<h1>Signals in Angular</h1>
 
-@for(user of users;track user) {
-<h2>{{user}}</h2>
-}
+<h1>{{x}}</h1>
+<h1>{{count()}} </h1>
 
-<hr />
-
-@for(student of students; track student.name; let id = $index) {
-<h2>
-  <span>{{id}}</span>
-  <span>{{student.name}}</span>
-  <span>{{student.age}}</span>
-  <span>{{student.email}}</span>
-  <button (click)="getName(student.name)">Get Name</button>
-</h2>
-}
+<button (click)="updateValue()">Update Value</button>
