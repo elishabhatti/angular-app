@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, effect, signal } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,16 +7,24 @@ import { Component, computed, signal } from '@angular/core';
   styleUrl: './app.css',
 })
 export class App {
-  x = signal(10);
-  y = signal(20);
-  z = computed(() => this.x() + this.y());
+  username = signal('Elisha');
+  count = signal(0);
+  displayHeading: boolean = false;
 
-  showValue() {
-    console.log(this.z());
-    this.x.set(100);
-    console.log(this.z());
+  constructor() {
+    effect(() => {
+      if (this.count() == 2) {
+        this.displayHeading = true;
+        setTimeout(() => {
+          this.displayHeading = false;
+        }, 2000);
+      } else {
+        this.displayHeading = false;
+      }
+    });
   }
-  updateX() {
-    this.x.set(200)
+  toggleValue() {
+    this.displayHeading = !this.displayHeading;
+    this.count.set(this.count() + 1);
   }
 }
