@@ -1,12 +1,18 @@
 import { Component, effect, signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
 export class App {
-  users = ['Elisha', 'Sam', 'Bruce', 'Smith', 'Ryan', 'Jameel', 'Noman'];
-  // users = [];
+  data = '';
+  name = 'Elisha';
+
+  changeName(event: Event) {
+    const val = (event.target as HTMLInputElement).value;
+    this.name = val;
+  }
 }
