@@ -1,4 +1,10 @@
-import { Component, effect, signal } from '@angular/core';
+import {
+  Component,
+  computed,
+  Signal,
+  signal,
+  WritableSignal,
+} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,22 +13,11 @@ import { Component, effect, signal } from '@angular/core';
   styleUrl: './app.css',
 })
 export class App {
-  count = signal(10);
-  x = 20;
+  data: WritableSignal<number> = signal(10);
+  count: Signal<number> = computed(() => 10);
 
-  constructor() {
-    effect(() => {
-      console.log(this.count());
-    });
-  }
-
-  updateValue(val: string) {
-    if (val == 'inc') {
-      this.count.set(this.count() + 1);
-    } else if (val == 'dec') {
-      this.count.set(this.count() - 1);
-    } else {
-      this.count.set(0);
-    }
+  updateSignal() {
+    // this.data.set('Hello');
+    this.data.update((val) => val+ 1)
   }
 }

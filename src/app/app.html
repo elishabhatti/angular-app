@@ -1,12 +1,4 @@
-<h1>Signals in Angular</h1>
-
-<h1>{{count()}}</h1>
-
-<!-- <button (click)="updateValue('inc')" >Increment</button>
-<button (click)="updateValue('dec')" >Decrement</button>
-<button (click)="updateValue('res')" >Reset</button> -->
-
-
-<button (click)="count.set(count() + 1)" >Increment</button>
-<button (click)="count.set(count() - 1)" >Decrement</button>
-<button (click)="count.set(0)" >Reset</button>
+<h1>Type with Signals</h1>
+<h2>{{data()}}</h2>
+<h2>{{count()}}</h2>
+<button (click)="updateSignal()">Update</button>
