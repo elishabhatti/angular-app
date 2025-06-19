@@ -3,9 +3,16 @@
     <h2 class="text-2xl font-bold">Elisha</h2>
   </div>
   <ul class="flex gap-4">
-    <li><a routerLink="/">Home</a></li>
-    <li><a routerLink="/about">About</a></li>
-    <li><a routerLink="/login">Login</a></li>
-    <li><a routerLink="/contact">Contact</a></li>
+    <li>
+      <a
+        routerLinkActive="underline"
+        [routerLinkActiveOptions]="{exact:true}"
+        routerLink="/"
+        >Home</a
+      >
+    </li>
+    <li><a routerLinkActive="underline" routerLink="/about">About</a></li>
+    <li><a routerLinkActive="underline" routerLink="/login">Login</a></li>
+    <li><a routerLinkActive="underline" routerLink="/contact">Contact</a></li>
   </ul>
 </nav>
