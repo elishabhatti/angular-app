@@ -1,11 +1,23 @@
-<h1 class="text-3xl font-bold">Types of Directives in Angular</h1>
+<h1 class="text-3xl font-bold">ngIf Directive in Angular</h1>
 
-<ul>
-  <li *ngFor="let x of students">{{x}}</li>
-</ul>
+<div *ngIf="login; else elseBlock">
+  <a href="/logout">Logout</a>
+</div>
+<ng-template #elseBlock>
+  <a>Login</a>
+</ng-template>
 
-<ul>
-  <li *ngFor="let student of studentsData">
-    <span>{{student.name}} {{student.age}} {{student.email}} </span>
-  </li>
-</ul>
+<div *ngIf="block == 0">
+  <h1>Heading 0</h1>
+</div>
+<div *ngIf="block == 1">
+  <h1>Heading 1</h1>
+</div>
+<div *ngIf="block == 2">
+  <h1>Heading 2</h1>
+</div>
+<div *ngIf="block == 3">
+  <h1>Heading 3</h1>
+</div>
+
+<button (click)="updateBlock()">Update Block</button>
