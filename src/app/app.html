@@ -1,7 +1,4 @@
-<h1 class="text-3xl font-bold">Dynamic Styling</h1>
+<h1 class="text-3xl font-bold">Directives in Angular</h1>
 
-<h1 [style.backgroundColor]="bgColor">Dynamic Color</h1>
-<h1 [style.fontSize.px]="fontSize">Dynamic Color</h1>
-<button (click)="updateHeadingSize()">Toggle Font Size</button>
-
-<h1 [style.fontSize]="!zoom ? headingSizeBig : headingSizeSmall">Heading</h1>
+<button (click)="hideShowHeading()">Hide Show Heading</button>
+<h1 *ngIf="show">Heading</h1>
