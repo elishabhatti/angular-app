@@ -1,23 +1,17 @@
-<h1 class="text-3xl font-bold">ngIf Directive in Angular</h1>
+<h1 class="text-3xl font-bold">ngSwitch Directive in Angular</h1>
 
-<div *ngIf="login; else elseBlock">
-  <a href="/logout">Logout</a>
-</div>
-<ng-template #elseBlock>
-  <a>Login</a>
-</ng-template>
+<button (click)="changeColor('red')">Red</button>
+<button (click)="changeColor('green')">Green</button>
+<button (click)="changeColor('blue')">Blue</button>
+<button (click)="changeColor('yellow')">Yellow</button>
+<button (click)="changeColor('blue')">Blue</button>
+<button (click)="changeColor('hfsdjk')">Brown Color</button>
 
-<div *ngIf="block == 0">
-  <h1>Heading 0</h1>
+<div [ngSwitch]="color">
+  <h1 *ngSwitchCase="'red'" class="text-red-500">Red Color</h1>
+  <h1 *ngSwitchCase="'green'" class="text-green-500">Green Color</h1>
+  <h1 *ngSwitchCase="'yellow'" class="text-yellow-500">Yellow Color</h1>
+  <h1 *ngSwitchCase="'blue'" class="text-blue-500">Blue Color</h1>
+  <h1 *ngSwitchCase="'gray'" class="text-gray-500">Gray Color</h1>
+  <h1 *ngSwitchDefault="''" class="text-black">No Color Match</h1>
 </div>
-<div *ngIf="block == 1">
-  <h1>Heading 1</h1>
-</div>
-<div *ngIf="block == 2">
-  <h1>Heading 2</h1>
-</div>
-<div *ngIf="block == 3">
-  <h1>Heading 3</h1>
-</div>
-
-<button (click)="updateBlock()">Update Block</button>
