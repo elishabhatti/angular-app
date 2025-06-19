@@ -3,3 +3,9 @@
 <ul>
   <li *ngFor="let x of students">{{x}}</li>
 </ul>
+
+<ul>
+  <li *ngFor="let student of studentsData">
+    <span>{{student.name}} {{student.age}} {{student.email}} </span>
+  </li>
+</ul>
