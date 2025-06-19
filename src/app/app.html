@@ -1,8 +1,19 @@
-<h1>Two Way Binding In Angular</h1>
-<!-- <input [(ngModel)]="name" type="text" placeholder="Enter Name" />
-<h1>{{name}} </h1> -->
+<h1>Todo List</h1>
 
-<input type="text" (input)="changeName($event)" placeholder="Enter Name" />
-<h1>{{name}}</h1>
-
-
+<input
+  type="text"
+  class="border"
+  [(ngModel)]="task"
+  placeholder="Enter Your Task"
+/>
+<button class="bg-amber-500 border" (click)="addTask()">Add Task</button>
+<h1>{{task}}</h1>
+@for(task of taskList; track task.id) {
+<div class="flex gap-2">
+  <p>{{task.id}}.</p>
+  <p>{{task.task}}</p>
+  <button class="bg-black border text-white" (click)="deleteTask(task.id)">
+    Del
+  </button>
+</div>
+}

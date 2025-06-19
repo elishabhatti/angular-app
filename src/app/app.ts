@@ -1,4 +1,4 @@
-import { Component, effect, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -8,11 +8,14 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './app.css',
 })
 export class App {
-  data = '';
-  name = 'Elisha';
+  task = '';
+  taskList: { id: number; task: string }[] = [];
 
-  changeName(event: Event) {
-    const val = (event.target as HTMLInputElement).value;
-    this.name = val;
+  addTask() {
+    this.taskList.push({ id: this.taskList.length + 1, task: this.task });
+    this.task = '';
+  }
+  deleteTask(taskId: number) {
+    this.taskList = this.taskList.filter((item) => item.id != taskId);
   }
 }
