@@ -1,15 +1,11 @@
-import { NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [NgIf, NgFor, NgSwitch, NgSwitchCase, NgSwitchDefault],
+  imports: [RouterLink, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
 export class App {
-  color: string = 'red';
-  changeColor(val:string) {
-    this.color = val
-  }
 }
