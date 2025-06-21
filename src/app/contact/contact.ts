@@ -8,8 +8,8 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './contact.css',
 })
 export class Contact {
-  name = new FormControl();
-  password = new FormControl();
+  name = new FormControl("User");
+  password = new FormControl("123");
 
   displayValue(e:Event) {
     e.preventDefault()
