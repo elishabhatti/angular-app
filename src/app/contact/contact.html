@@ -1,17 +1,42 @@
-<h1>Basic of Reactive Forms</h1>
+<h1>Form Grouping Reactive Forms</h1>
 
-<form>
-  <input type="text" placeholder="Enter Your Name" [formControl]="name" />
-  <br />
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
   <input
+    class="border p-1 m-2"
     type="text"
-    placeholder="Enter Your Password"
-    [formControl]="password"
+    placeholder="Enter Name"
+    formControlName="name"
   />
   <br />
-  <button (click)="displayValue($event)">Login</button>
-  <button (click)="setValuesField()">Set Values Field</button>
+  <input
+    class="border p-1 m-2"
+    type="number"
+    placeholder="Enter Age"
+    formControlName="age"
+  />
   <br />
-  <h3>{{name.value}}</h3>
-  <h3>{{password.value}}</h3>
+  <input
+    class="border p-1 m-2"
+    type="email"
+    placeholder="Enter Email"
+    formControlName="email"
+  />
+  <br />
+  <input
+    class="border p-1 m-2"
+    type="password"
+    placeholder="Enter Password"
+    formControlName="password"
+  />
+  <br />
+  <button class="border p-1 m-2">Submit</button>
+  <button type="button" (click)="setValues()" class="border p-1 m-2">
+    Set Values
+  </button>
 </form>
+
+
+<h1>{{this.profileForm.value.name}} </h1>
+<h1>{{this.profileForm.value.age}} </h1>
+<h1>{{this.profileForm.value.email}} </h1>
+<h1>{{this.profileForm.value.password}} </h1>

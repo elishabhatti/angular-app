@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -8,15 +8,22 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './contact.css',
 })
 export class Contact {
-  name = new FormControl("User");
-  password = new FormControl("123");
+  profileForm = new FormGroup({
+    name: new FormControl('Elisha'),
+    age: new FormControl('18'),
+    email: new FormControl('elisha@gmail.com'),
+    password: new FormControl('elisha@#$'),
+  });
 
-  displayValue(e:Event) {
-    e.preventDefault()
-    console.log(this.name.value, this.password.value);
+  onSubmit() {
+    console.log(this.profileForm.value);
   }
-  setValuesField() {
-    this.name.setValue("Elisha")
-    this.password.setValue("elisha@#$")
+  setValues() {
+    this.profileForm.setValue({
+      name: "Guest",
+      age: "18",
+      email: "guest@gmail.com",
+      password : "guest@#$"
+    })
   }
 }
