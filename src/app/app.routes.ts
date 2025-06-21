@@ -11,6 +11,6 @@ export const routes: Routes = [
   { path: 'about', component: About },
   { path: 'login', component: Login },
   { path: 'contact', component: Contact },
-  { path: 'profile', component: Profile },
+  { path: 'profile', component: Profile, data:{name: 'Elisha'} },
   { path: '**', component: PageNotFound },
 ];
