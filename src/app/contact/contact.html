@@ -1,1 +1,16 @@
-<p>contact works!</p>
+<h1>Basic of Reactive Forms</h1>
+
+<form>
+  <input type="text" placeholder="Enter Your Name" [formControl]="name" />
+  <br />
+  <input
+    type="text"
+    placeholder="Enter Your Password"
+    [formControl]="password"
+  />
+  <br />
+  <button (click)="displayValue($event)">Login</button>
+  <br />
+  <h3>{{name.value}}</h3>
+  <h3>{{password.value}}</h3>
+</form>
