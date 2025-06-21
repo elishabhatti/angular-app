@@ -8,12 +8,30 @@
     formControlName="name"
   />
   <br />
+  <span class="text-red-500" *ngIf="name?.hasError('required')"
+    >Name is Required</span
+  >
+  <span
+    class="text-red-500"
+    *ngIf="name?.invalid && (name?.dirty || name?.touched)"
+    >Provide user name</span
+  >
+  <br />
   <input
     class="border p-1 m-2"
     type="number"
     placeholder="Enter Age"
     formControlName="age"
   />
+  <br />
+  <span class="text-red-500" *ngIf="age?.hasError('required')"
+    >Age is Required</span
+  >
+  <span
+    class="text-red-500"
+    *ngIf="age?.invalid && (age?.dirty || age?.touched)"
+    >Provide user age</span
+  >
   <br />
   <input
     class="border p-1 m-2"
@@ -22,6 +40,15 @@
     formControlName="email"
   />
   <br />
+  <span class="text-red-500" *ngIf="email?.hasError('required')"
+    >Email is Required</span
+  >
+  <span
+    class="text-red-500"
+    *ngIf="email?.invalid && (email?.dirty || email?.touched)"
+    >Provide Valid user email</span
+  >
+  <br />
   <input
     class="border p-1 m-2"
     type="password"
@@ -29,14 +56,14 @@
     formControlName="password"
   />
   <br />
+  <span class="text-red-500" *ngIf="password?.hasError('required')"
+    >Password is Required</span
+  >
+  <span
+    class="text-red-500"
+    *ngIf="password?.invalid && (password?.dirty || password?.touched)"
+    >Provide user Password</span
+  >
+  <br />
   <button class="border p-1 m-2">Submit</button>
-  <button type="button" (click)="setValues()" class="border p-1 m-2">
-    Set Values
-  </button>
 </form>
-
-
-<h1>{{this.profileForm.value.name}} </h1>
-<h1>{{this.profileForm.value.age}} </h1>
-<h1>{{this.profileForm.value.email}} </h1>
-<h1>{{this.profileForm.value.password}} </h1>
