@@ -1,69 +1,22 @@
-<h1>Form Grouping Reactive Forms</h1>
+<h1>Template Driven Forms</h1>
 
-<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-  <input
-    class="border p-1 m-2"
-    type="text"
-    placeholder="Enter Name"
-    formControlName="name"
-  />
+<form #userForm="ngForm" (ngSubmit)="addDetails(userForm.value)">
+  <input type="text" placeholder="Enter Name" name="name" ngModel />
   <br />
-  <span class="text-red-500" *ngIf="name?.hasError('required')"
-    >Name is Required</span
-  >
-  <span
-    class="text-red-500"
-    *ngIf="name?.invalid && (name?.dirty || name?.touched)"
-    >Provide user name</span
-  >
+  <input type="password" placeholder="Enter Password" name="password" ngModel />
   <br />
-  <input
-    class="border p-1 m-2"
-    type="number"
-    placeholder="Enter Age"
-    formControlName="age"
-  />
+  <select name="gender" ngModel>
+    <option value="Select gender">Select Gender</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+  </select>
   <br />
-  <span class="text-red-500" *ngIf="age?.hasError('required')"
-    >Age is Required</span
-  >
-  <span
-    class="text-red-500"
-    *ngIf="age?.invalid && (age?.dirty || age?.touched)"
-    >Provide user age</span
-  >
+  <input type="range" min="0" max="20" ngModel name="range" />
   <br />
-  <input
-    class="border p-1 m-2"
-    type="email"
-    placeholder="Enter Email"
-    formControlName="email"
-  />
-  <br />
-  <span class="text-red-500" *ngIf="email?.hasError('required')"
-    >Email is Required</span
-  >
-  <span
-    class="text-red-500"
-    *ngIf="email?.invalid && (email?.dirty || email?.touched)"
-    >Provide Valid user email</span
-  >
-  <br />
-  <input
-    class="border p-1 m-2"
-    type="password"
-    placeholder="Enter Password"
-    formControlName="password"
-  />
-  <br />
-  <span class="text-red-500" *ngIf="password?.hasError('required')"
-    >Password is Required</span
-  >
-  <span
-    class="text-red-500"
-    *ngIf="password?.invalid && (password?.dirty || password?.touched)"
-    >Provide user Password</span
-  >
-  <br />
-  <button class="border p-1 m-2">Submit</button>
+  <button>Add User</button>
 </form>
+
+<h3>{{userDetails?.name}}</h3>
+<h3>{{userDetails?.password}}</h3>
+<h3>{{userDetails?.gender}}</h3>
+<h3>{{userDetails?.range}}</h3>
