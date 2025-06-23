@@ -1,12 +1,7 @@
-<h1>Pass Data to Child Component</h1>
-<app-user [user]="username" city="Karachi"></app-user>
+<h1>Reuse Components</h1>
 
-<select
-  #selectedUser
-  (change)="onUserChange(selectedUser.value)"
->
-  <option value="">Select Name</option>
-  <option value="Elisha">Elisha</option>
-  <option value="Bruce">Bruce</option>
-  <option value="Peter">Peter</option>
-</select>
+@for(user of users; track user){
+<div>
+  <app-user [user]="user"> </app-user>
+</div>
+}

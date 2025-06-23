@@ -8,9 +8,5 @@ import { User } from './user/user';
   styleUrl: './app.css',
 })
 export class App {
-  username = '';
-
-  onUserChange(user: string) {
-    this.username = user;
-  }
+  users = ['Elisha', 'Bruce', 'Wayne', 'Ryan', 'Peter', 'Sam', 'John'];
 }
