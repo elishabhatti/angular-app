@@ -9,8 +9,8 @@ import { User } from './user/user';
 })
 export class App {
   users: undefined | string[];
-  handleUsers(users: string[]) {
+  userHandle(users: string[]) {
+    this.users = users
     console.log(users);
-    this.users = users;
   }
 }

@@ -8,7 +8,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class User {
   @Output() getUsers = new EventEmitter();
-  users = ['Elisha', 'Bruce', 'Wayne', 'Ryan', 'Peter', 'Sam', 'John'];
+  users = ['Elisha', 'Jameel', 'John', 'James', 'Anil', 'Sidhu'];
+
   loadData() {
     this.getUsers.emit(this.users);
   }
