@@ -8,5 +8,9 @@ import { User } from './user/user';
   styleUrl: './app.css',
 })
 export class App {
-  users = ['Elisha', 'Bruce', 'Wayne', 'Ryan', 'Peter', 'Sam', 'John'];
+  users: undefined | string[];
+  handleUsers(users: string[]) {
+    console.log(users);
+    this.users = users;
+  }
 }
