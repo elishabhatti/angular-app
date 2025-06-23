@@ -1,6 +1,3 @@
-<h1>Pass Data Child to Component</h1>
-<app-user (getUsers)="userHandle($event)"> </app-user>
-
-@for(user of users; track user) {
-<h1>{{user}}</h1>
-}
+<h1>Make Your Own Pipe in Angular</h1>
+{{amount | currencyConvertor}}
+{{100 | currencyConvertor: 12}}

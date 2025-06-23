@@ -1,16 +1,12 @@
 import { Component } from '@angular/core';
-import { User } from './user/user';
+import { CurrencyConvertorPipe } from './pipe/currency-convertor-pipe';
 
 @Component({
   selector: 'app-root',
-  imports: [User],
+  imports: [CurrencyConvertorPipe],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
 export class App {
-  users: undefined | string[];
-  userHandle(users: string[]) {
-    this.users = users
-    console.log(users);
-  }
+  amount: number = 10;
 }
