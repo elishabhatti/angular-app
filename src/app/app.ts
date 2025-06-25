@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Product } from './services/product';
+import { Products } from './services/products';
 
 @Component({
   selector: 'app-root',
@@ -8,18 +8,11 @@ import { Product } from './services/product';
   styleUrl: './app.css',
 })
 export class App {
-  productData:
-    | {
-        name: string;
-        branch: string;
-        price: number;
-      }[]
-    | undefined;
-
-  constructor(private productService: Product) {}
-  getProductData() {
-    this.productData = this.productService.getProductData();
-    console.log(this.productData);
-    
+  constructor(private productService: Products) {}
+  ngOnInit() {
+    this.productService.getProductLists().subscribe((anyData) => {
+      console.log(anyData);
+      
+    })
   }
 }
