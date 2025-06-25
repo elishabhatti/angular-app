@@ -8,11 +8,12 @@ import { Products } from './services/products';
   styleUrl: './app.css',
 })
 export class App {
+  productList: Products[] = [];
   constructor(private productService: Products) {}
   ngOnInit() {
-    this.productService.getProductLists().subscribe((anyData) => {
-      console.log(anyData);
-      
-    })
+    this.productService.getProductLists().subscribe((data) => {
+      console.log(data);
+      this.productList = data.products;
+    });
   }
 }
