@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -7,17 +7,17 @@ import { Component } from '@angular/core';
   styleUrl: './user.css',
 })
 export class User {
+  @Input() counter = 0;
   name = 'elisha';
   constructor() {
-    this.name = "Sid"
+    this.name = 'Sid';
     console.log('Constructor');
   }
   ngOnInit() {
-    this.name = "Sam"
+    this.name = 'Sam';
     console.log('ng on init');
   }
   ngOnDestroy() {
-    console.log("Ng destroy");
-    
+    console.log('Ng destroy');
   }
 }

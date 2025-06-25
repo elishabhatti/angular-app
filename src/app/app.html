@@ -2,5 +2,5 @@
 <h1>{{counter}}</h1>
 <button (click)="updatedCounter()">Inc</button>
 <div *ngIf="counter != 5">
-  <app-user> </app-user>
+  <app-user [counter]="counter"> </app-user>
 </div>
