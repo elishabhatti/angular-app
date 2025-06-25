@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
-import { CurrencyConvertorPipe } from './pipe/currency-convertor-pipe';
+import { User } from './user/user';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [CurrencyConvertorPipe],
+  imports: [User, NgIf],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
 export class App {
-  amount: number = 10;
+  counter = 0;
+  updatedCounter() {
+    this.counter++;
+  }
 }
