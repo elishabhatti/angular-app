@@ -1,25 +1,25 @@
-import { afterNextRender, afterRenderEffect, Component, ViewChild } from '@angular/core';
-import { User } from './user/user';
-import { NgIf } from '@angular/common';
+import { Component } from '@angular/core';
+import { Product } from './services/product';
 
 @Component({
   selector: 'app-root',
-  imports: [User, NgIf],
+  imports: [],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
 export class App {
-  @ViewChild('user') User: any;
-  counter = 0;
-  constructor() {
-    afterRenderEffect(() => {
-      console.log("After Render", this.User.counter);
-    })
-    afterNextRender(() => {
-      console.log("After Next Render", this.User.counter);
-    })
-  }
-  updatedCounter() {
-    this.counter++;
+  productData:
+    | {
+        name: string;
+        branch: string;
+        price: number;
+      }[]
+    | undefined;
+
+  constructor(private productService: Product) {}
+  getProductData() {
+    this.productData = this.productService.getProductData();
+    console.log(this.productData);
+    
   }
 }
