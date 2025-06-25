@@ -1,4 +1,4 @@
-import { afterRenderEffect, Component, ViewChild } from '@angular/core';
+import { afterNextRender, afterRenderEffect, Component, ViewChild } from '@angular/core';
 import { User } from './user/user';
 import { NgIf } from '@angular/common';
 
@@ -14,6 +14,9 @@ export class App {
   constructor() {
     afterRenderEffect(() => {
       console.log("After Render", this.User.counter);
+    })
+    afterNextRender(() => {
+      console.log("After Next Render", this.User.counter);
     })
   }
   updatedCounter() {
