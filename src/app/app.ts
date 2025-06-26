@@ -28,9 +28,15 @@ export class App {
         }
       });
     } else {
-      console.log('update user');
+      const userData = { ...user, id: this.selectedUser.id };
+      this.userService.updateUser(userData).subscribe((data: User) => {
+        if (userData) {
+          this.getUsers();
+        }
+      });
     }
   }
+
   deleteUser(id: string) {
     this.userService.deleteUser(id).subscribe((data: User) => {
       if (data) {
@@ -38,6 +44,7 @@ export class App {
       }
     });
   }
+
   selectUser(id: string) {
     this.userService.getSelectedUser(id).subscribe((data: User) => {
       console.log(data);

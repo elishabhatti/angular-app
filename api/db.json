@@ -1,16 +1,10 @@
 {
   "users": [
     {
-      "id": "04e3",
       "name": "ELISHA JAMEEL BHATTI",
       "age": 18,
-      "email": "elishabhatti270@gmail.com"
-    },
-    {
-      "id": "a5aa",
-      "name": "ELISHA JAMEEL BHATTI",
-      "age": 182,
-      "email": "elishabhatti270@gmail.com"
+      "email": "elishabhatti270@gmail.com",
+      "id": "04e3"
     }
   ]
 }
