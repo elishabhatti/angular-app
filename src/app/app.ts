@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class App {
   users: User[] = [];
+  selectedUser: User | undefined;
+
   constructor(private userService: Users) {}
 
   getUsers() {
@@ -35,6 +37,7 @@ export class App {
   selectUser(id: string) {
     this.userService.getSelectedUser(id).subscribe((data: User) => {
       console.log(data);
+      this.selectedUser = data;
     });
   }
   ngOnInit() {

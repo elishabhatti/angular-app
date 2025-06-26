@@ -7,19 +7,21 @@
     type="text"
     name="name"
     placeholder="Enter Name"
-    ngModel
-  />
-  <input
+    [ngModel]="selectedUser?.name"
+    />
+    <input
     class="border border-gray-500"
     required
     type="number"
     name="age"
+    [ngModel]="selectedUser?.age"
     placeholder="Enter Age"
     ngModel
-  />
-  <input
+    />
+    <input
     class="border border-gray-500"
     required
+    [ngModel]="selectedUser?.email"
     type="email"
     name="email"
     placeholder="Enter Email"
