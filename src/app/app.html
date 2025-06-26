@@ -8,8 +8,8 @@
     name="name"
     placeholder="Enter Name"
     [ngModel]="selectedUser?.name"
-    />
-    <input
+  />
+  <input
     class="border border-gray-500"
     required
     type="number"
@@ -17,8 +17,8 @@
     [ngModel]="selectedUser?.age"
     placeholder="Enter Age"
     ngModel
-    />
-    <input
+  />
+  <input
     class="border border-gray-500"
     required
     [ngModel]="selectedUser?.email"
@@ -27,10 +27,13 @@
     placeholder="Enter Email"
     ngModel
   />
-  <button type="submit">Submit</button>
+  @if(!selectedUser) {
+  <button type="submit">Add User</button>
+  }@else {
+  <button type="submit">Update User</button>
+  }
 </form>
 
-<h1>All Users</h1>
 
 @for(user of users; track $index) {
 <ul>

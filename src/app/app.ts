@@ -21,11 +21,15 @@ export class App {
     });
   }
   addUser(user: User) {
-    this.userService.saveUsers(user).subscribe((data: User) => {
-      if (data) {
-        this.getUsers();
-      }
-    });
+    if (!this.selectedUser) {
+      this.userService.saveUsers(user).subscribe((data: User) => {
+        if (data) {
+          this.getUsers();
+        }
+      });
+    } else {
+      console.log('update user');
+    }
   }
   deleteUser(id: string) {
     this.userService.deleteUser(id).subscribe((data: User) => {
