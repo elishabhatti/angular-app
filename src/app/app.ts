@@ -32,6 +32,11 @@ export class App {
       }
     });
   }
+  selectUser(id: string) {
+    this.userService.getSelectedUser(id).subscribe((data: User) => {
+      console.log(data);
+    });
+  }
   ngOnInit() {
     this.getUsers();
   }

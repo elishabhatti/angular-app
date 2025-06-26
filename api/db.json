@@ -1,3 +1,10 @@
 {
-  "users": []
+  "users": [
+    {
+      "id": "04e3",
+      "name": "ELISHA JAMEEL BHATTI",
+      "age": 18,
+      "email": "elishabhatti270@gmail.com"
+    }
+  ]
 }
