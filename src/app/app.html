@@ -1,1 +1,10 @@
 <h1>Call API with json server</h1>
+
+<h1>All Users</h1>
+@for(user of users; track $index) {
+<ul>
+  <li>Name: {{user.name}}</li>
+  <li>Age: {{user.age}}</li>
+  <li>Email: {{user.email}}</li>
+</ul>
+}
