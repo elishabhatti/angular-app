@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Products } from './services/products';
 import { Users } from './services/users';
 import { User } from './interfaces/User';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [FormsModule ],
+  imports: [FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
@@ -19,8 +19,10 @@ export class App {
       console.log(data);
     });
   }
-  addUser(user:User) {
+  addUser(user: User) {
+    this.userService.saveUsers(user).subscribe((data: User) => {
+      console.log(data);
+    });
     console.log(user);
-    
   }
 }
