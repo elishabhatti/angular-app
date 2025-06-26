@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { Products } from './services/products';
 import { Users } from './services/users';
 import { User } from './interfaces/User';
+import { FormsModule } from '@angular/forms'; 
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [FormsModule ],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

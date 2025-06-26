@@ -8,3 +8,10 @@
   <li>Email: {{user.email}}</li>
 </ul>
 }
+
+<form #userForm="ngForm" ngSubmit="addUser(userForm.value)">
+  <input class="border border-gray-500" required type="text" name="name" placeholder="Enter Name" ngModel />
+  <input class="border border-gray-500" required type="number" name="age" placeholder="Enter Age" ngModel />
+  <input class="border border-gray-500" required type="email" name="email" placeholder="Enter Email" ngModel />
+  <button type="submit">Submit</button>
+</form>
