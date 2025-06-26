@@ -8,12 +8,14 @@ import { User } from '../interfaces/User';
 })
 export class Users {
   constructor(private http: HttpClient) {}
+  url = `http://localhost:3000/users`;
   getUsers(): Observable<User[]> {
-    const url = `http://localhost:3000/users`;
-    return this.http.get<User[]>(url);
+    return this.http.get<User[]>(this.url);
   }
-  saveUsers(user:User): Observable<User> {
-    const url = `http://localhost:3000/users`;
-    return this.http.post<User>(url, user);
+  saveUsers(user: User): Observable<User> {
+    return this.http.post<User>(this.url, user);
+  }
+  deleteUser(id: string): Observable<User> {
+    return this.http.delete<User>(this.url + '/' + id);
   }
 }

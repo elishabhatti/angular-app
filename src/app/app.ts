@@ -16,15 +16,20 @@ export class App {
   getUsers() {
     this.userService.getUsers().subscribe((data: User[]) => {
       this.users = data;
-      console.log(data);
     });
   }
   addUser(user: User) {
     this.userService.saveUsers(user).subscribe((data: User) => {
-      if(data) {
-        this.getUsers()
+      if (data) {
+        this.getUsers();
       }
-      console.log(data);
+    });
+  }
+  deleteUser(id: string) {
+    this.userService.deleteUser(id).subscribe((data: User) => {
+      if (data) {
+        this.getUsers();
+      }
     });
   }
   ngOnInit() {
