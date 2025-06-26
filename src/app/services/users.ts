@@ -16,5 +16,4 @@ export class Users {
     const url = `http://localhost:3000/users`;
     return this.http.post<User>(url, user);
   }
-
 }
