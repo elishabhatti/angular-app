@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Products } from './services/products';
 import { Users } from './services/users';
 import { User } from './interfaces/User';
 import { FormsModule } from '@angular/forms';
@@ -22,9 +21,11 @@ export class App {
   }
   addUser(user: User) {
     this.userService.saveUsers(user).subscribe((data: User) => {
+      if(data) {
+        this.getUsers()
+      }
       console.log(data);
     });
-    console.log(user);
   }
   ngOnInit() {
     this.getUsers();
