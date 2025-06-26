@@ -19,4 +19,8 @@ export class App {
       console.log(data);
     });
   }
+  addUser(user:User) {
+    console.log(user);
+    
+  }
 }
