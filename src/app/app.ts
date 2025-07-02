@@ -3,7 +3,7 @@ import { Form } from "./form/form";
 
 @Component({
   selector: 'app-root',
-  imports: [Form],
+  imports: [Form, ],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
